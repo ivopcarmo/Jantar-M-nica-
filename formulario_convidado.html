@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jantar Surpresa - Mónica 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .pessoa-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .pessoa-header {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+        }
+
+        .btn-add {
+            background: #28a745;
+        }
+
+        .btn-add:hover {
+            background: #218838;
+        }
+
+        .btn-remove {
+            background: #dc3545;
+            padding: 10px 20px;
+            font-size: 14px;
+            width: auto;
+            margin-top: 10px;
+        }
+
+        .btn-remove:hover {
+            background: #c82333;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            text-align: center;
+        }
+
+        .success-message h3 {
+            margin-bottom: 10px;
+        }
+
+        .menu-section {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #ffc107;
+        }
+
+        .menu-section h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .menu-section ul {
+            margin-left: 20px;
+            color: #856404;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Jantar Surpresa</h1>
+            <p>Confirmação de Presença</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Olá! 👋</h2>
+                <p>Estamos a organizar um jantar surpresa especial e gostaríamos muito da tua presença!</p>
+                <p style="margin-top: 10px;"><strong>Por favor, preenche os dados abaixo para confirmar a tua participação.</strong></p>
+            </div>
+
+            <div class="menu-section">
+                <h3>🍽️ Menu Disponível</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                    <div>
+                        <strong>🐟 Pratos de Peixe:</strong>
+                        <ul>
+                            <li>Massada de Peixe</li>
+                            <li>Bacalhau com Espinafres</li>
+                            <li>Bacalhau Espiritual</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>🥩 Pratos de Carne:</strong>
+                        <ul>
+                            <li>Vitela Estufada com Cogumelos</li>
+                            <li>Lombo de Porco com Farinheira</li>
+                            <li>Carne de Porco à Portuguesa</li>
+                            <li>Bifinhos com Camarão</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="successMessage" class="success-message">
+                <h3>✅ Confirmação Enviada!</h3>
+                <p>Obrigado pela tua resposta. Até breve! 🎊</p>
+            </div>
+
+            <form id="convidadoForm">
+                <div class="form-group">
+                    <label for="nomeConvidado">
+                        O teu nome <span class="required">*</span>
+                    </label>
+                    <input type="text" id="nomeConvidado" required placeholder="Ex: João Silva">
+                </div>
+
+                <div class="form-group">
+                    <label for="numAcompanhantes">
+                        Quantas pessoas vêm contigo? (não te contes a ti)
+                    </label>
+                    <input type="number" id="numAcompanhantes" min="0" max="10" value="0">
+                    <small style="color: #6c757d; display: block; margin-top: 5px;">
+                        Se vens sozinho(a), deixa em 0
+                    </small>
+                </div>
+
+                <div id="pessoasContainer">
+                    <!-- As pessoas serão adicionadas aqui dinamicamente -->
+                </div>
+
+                <button type="button" class="btn btn-add" onclick="adicionarPessoa()">
+                    ➕ Adicionar outra pessoa
+                </button>
+
+                <button type="submit" class="btn whatsapp-btn">
+                    <span style="font-size: 24px;">📱</span>
+                    Enviar Confirmação via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const pratosPeixe = [
+            "Massada de Peixe",
+            "Bacalhau com Espinafres",
+            "Bacalhau Espiritual"
+        ];
+
+        const pratosCarne = [
+            "Vitela Estufada com Cogumelos",
+            "Lombo de Porco com Farinheira",
+            "Carne de Porco à Portuguesa",
+            "Bifinhos com Camarão"
+        ];
+
+        let contadorPessoas = 0;
+
+        // Adiciona a primeira pessoa (o próprio convidado) ao carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            adicionarPessoa(true);
+        });
+
+        function adicionarPessoa(isPrincipal = false) {
+            const container = document.getElementById('pessoasContainer');
+            const id = contadorPessoas++;
+            
+            const titulo = isPrincipal ? 'As tuas escolhas' : `Pessoa ${id}`;
+            
+            const pessoaDiv = document.createElement('div');
+            pessoaDiv.className = 'pessoa-card';
+            pessoaDiv.id = `pessoa_${id}`;
+            
+            pessoaDiv.innerHTML = `
+                <div class="pessoa-header">${titulo}</div>
+                
+                ${!isPrincipal ? `
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" id="nome_${id}" required placeholder="Nome da pessoa">
+                </div>
+                ` : ''}
+                
+                <div class="form-group">
+                    <label>Idade</label>
+                    <input type="number" id="idade_${id}" min="0" max="120" required placeholder="Idade">
+                    <small style="color: #6c757d; display: block; margin-top: 5px;">
+                        Precisamos saber se é criança (menos de 9 anos)
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>🐟 Escolha de Prato de Peixe</label>
+                    <select id="peixe_${id}" required>
+                        <option value="">Selecione...</option>
+                        ${pratosPeixe.map(p => `<option value="${p}">${p}</option>`).join('')}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>🥩 Escolha de Prato de Carne</label>
+                    <select id="carne_${id}" required>
+                        <option value="">Selecione...</option>
+                        ${pratosCarne.map(p => `<option value="${p}">${p}</option>`).join('')}
+                    </select>
+                </div>
+
+                ${!isPrincipal ? `
+                    <button type="button" class="btn btn-remove" onclick="removerPessoa(${id})">
+                        🗑️ Remover esta pessoa
+                    </button>
+                ` : ''}
+            `;
+            
+            container.appendChild(pessoaDiv);
+        }
+
+        function removerPessoa(id) {
+            const elemento = document.getElementById(`pessoa_${id}`);
+            if (elemento) {
+                elemento.remove();
+            }
+        }
+
+        document.getElementById('convidadoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nomeConvidado = document.getElementById('nomeConvidado').value;
+            const numAcompanhantes = parseInt(document.getElementById('numAcompanhantes').value) || 0;
+            
+            // Recolher dados de todas as pessoas
+            const pessoas = [];
+            const pessoasCards = document.querySelectorAll('.pessoa-card');
+            
+            pessoasCards.forEach((card, index) => {
+                const id = card.id.split('_')[1];
+                const nome = document.getElementById(`nome_${id}`)?.value || nomeConvidado;
+                const idade = document.getElementById(`idade_${id}`).value;
+                const peixe = document.getElementById(`peixe_${id}`).value;
+                const carne = document.getElementById(`carne_${id}`).value;
+                
+                pessoas.push({
+                    nome,
+                    idade,
+                    peixe,
+                    carne
+                });
+            });
+
+            // Criar mensagem para WhatsApp
+            let mensagem = `🎉 *CONFIRMAÇÃO - JANTAR SURPRESA*\n\n`;
+            mensagem += `👤 *Convidado:* ${nomeConvidado}\n`;
+            mensagem += `👥 *Total de pessoas:* ${pessoas.length}\n`;
+            
+            const criancas = pessoas.filter(p => parseInt(p.idade) < 9).length;
+            if (criancas > 0) {
+                mensagem += `👶 *Crianças (< 9 anos):* ${criancas}\n`;
+            }
+            
+            mensagem += `\n📋 *ESCOLHAS DO MENU:*\n\n`;
+            
+            pessoas.forEach((pessoa, index) => {
+                mensagem += `*${pessoa.nome}* (${pessoa.idade} anos)\n`;
+                mensagem += `🐟 Peixe: ${pessoa.peixe}\n`;
+                mensagem += `🥩 Carne: ${pessoa.carne}\n\n`;
+            });
+
+            mensagem += `---\n✅ Confirmado em ${new Date().toLocaleString('pt-PT')}`;
+
+            // Número de WhatsApp para receber as confirmações
+            const numeroWhatsApp = '351962930763';
+            
+            // Codificar mensagem para URL
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            
+            // Criar link do WhatsApp
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+            
+            // Mostrar mensagem de sucesso
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Abrir WhatsApp
+            window.open(linkWhatsApp, '_blank');
+            
+            // Scroll para o topo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Opcional: Limpar formulário após 3 segundos
+            setTimeout(() => {
+                if (confirm('Formulário enviado! Deseja preencher outro?')) {
+                    location.reload();
+                }
+            }, 3000);
+        });
+
+        // Sincronizar número de acompanhantes
+        document.getElementById('numAcompanhantes').addEventListener('change', function() {
+            const num = parseInt(this.value) || 0;
+            const pessoasCards = document.querySelectorAll('.pessoa-card');
+            const pessoasAtuais = pessoasCards.length;
+            
+            // O total de pessoas deve ser num + 1 (o convidado principal)
+            const totalDesejado = num + 1;
+            
+            if (totalDesejado > pessoasAtuais) {
+                // Adicionar pessoas
+                for (let i = pessoasAtuais; i < totalDesejado; i++) {
+                    adicionarPessoa(false);
+                }
+            } else if (totalDesejado < pessoasAtuais) {
+                // Remover pessoas (exceto a primeira que é o convidado principal)
+                for (let i = pessoasAtuais - 1; i >= totalDesejado; i--) {
+                    const cards = document.querySelectorAll('.pessoa-card');
+                    if (cards[i]) {
+                        cards[i].remove();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
